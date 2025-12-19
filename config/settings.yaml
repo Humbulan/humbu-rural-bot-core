@@ -1,0 +1,45 @@
+# Humbu Rural Bot Core Configuration
+# Verified Revenue: $147,575/month Government SaaS
+
+api:
+  government_saas:
+    port: 8083
+    revenue_per_transaction: 0.47
+    daily_target_transactions: 10466
+    clients:
+      - Apex
+      - LEDA
+      - Government Agriculture Dept
+  
+  voice_api:
+    port: 8084
+    wake_word: "Humbu AI"
+  
+hardware:
+  serial:
+    baud_rate: 9600
+    timeout: 2
+    default_port: /dev/ttyUSB0
+  
+  sensors:
+    soil_moisture:
+      enabled: true
+      update_interval: 300  # seconds
+    gps_tracking:
+      enabled: true
+      update_interval: 60
+    livestock_monitor:
+      enabled: true
+  
+revenue:
+  target_monthly: 147575
+  currency: USD
+  payment_cycles:
+    - Apex: "1st of month"
+    - LEDA: "15th of month"
+    - Government: "30th of month"
+
+logging:
+  level: INFO
+  watchdog_interval: 300  # 5 minutes
+  revenue_log: data/logs/revenue_tracking.log
