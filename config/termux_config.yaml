@@ -1,0 +1,44 @@
+# Humbu Rural Bot - Termux Optimized Configuration
+
+api:
+  government_saas:
+    port: 8083
+    host: "0.0.0.0"
+    debug: false
+    simulation_mode: true  # No hardware connected yet
+    
+  watchdog:
+    check_interval: 60  # seconds
+    log_interval: 300   # 5 minutes
+    
+hardware:
+  simulation: true
+  simulated_devices:
+    - soil_sensor_1
+    - gps_tracker_1
+    - delivery_robot_1
+    
+  # When real hardware is available, set simulation to false
+  # real_serial_port: "/dev/ttyUSB0"
+  # real_baud_rate: 9600
+
+revenue:
+  rates:
+    soil_moisture: 0.15
+    gps_tracking: 0.25
+    delivery_status: 0.47
+    livestock_health: 0.32
+    simulated_data: 0.10
+  
+  auto_save_interval: 60  # Save revenue data every minute
+
+logging:
+  level: "INFO"
+  file: "data/logs/system.log"
+  max_size_mb: 10
+
+security:
+  api_keys:
+    apex: "APEX-2024-GOV-SAAS"
+    leda: "LEDA-RURAL-DEV"
+    government: "GOV-AGRIC-SAAS-2024"
