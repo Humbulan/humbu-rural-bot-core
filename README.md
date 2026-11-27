@@ -2,9 +2,22 @@
 
 **Lightweight Automation, Telemetry & Government SaaS Engine for Edge & Termux Environments**
 
+![Humbu Rural Bot Core Demo](assets/demo.gif)
+
 `humbu-rural-bot-core` is the operational engine powering rural service delivery, hardware telemetry, and municipal SaaS workflows. Designed to run cleanly on low-overhead Linux nodes and Android Termux deployments without heavy cloud dependencies, it bridges field hardware, real-time monitoring, and auditable load verification.
 
----
+## Quick Start
+
+```bash
+# 1. Install dependencies (use requirements.txt on standard Linux servers)
+pip install -r requirements_light.txt
+
+# 2. Launch the core orchestration stack and run system sanity checks
+chmod +x start_humbu_system.sh && ./start_humbu_system.sh && python3 test_system.py
+
+# 3. Generate a verifiable proof-of-load audit report
+python3 generate_audit.py && cat Audit_Proof_of_Load.txt
+
 
 ## Key Capabilities
 
